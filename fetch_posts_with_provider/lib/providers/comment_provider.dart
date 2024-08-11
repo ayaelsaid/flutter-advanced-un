@@ -1,9 +1,6 @@
 import 'package:fetch_posts_with_provider/models/comment.dart';
 import 'package:fetch_posts_with_provider/repository/fetch_comments.dart';
 import 'package:flutter/material.dart';
-// import 'package:fetch_posts_with_provider/models/comment.dart';
-// import 'package:fetch_posts_with_provider/repository/fetch_comments.dart';
-// import 'package:flutter/material.dart';
 
 class CommentProvider with ChangeNotifier {
   final CommentRepository commentRepository;

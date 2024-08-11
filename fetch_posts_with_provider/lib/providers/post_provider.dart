@@ -1,9 +1,6 @@
 import 'package:fetch_posts_with_provider/models/post.dart';
 import 'package:fetch_posts_with_provider/repository/fetch_posts.dart';
 import 'package:flutter/material.dart';
-// import 'package:fetch_posts_with_provider/models/post.dart';
-// import 'package:fetch_posts_with_provider/repository/fetch_posts.dart';
-// import 'package:flutter/material.dart';
 
 class PostProvider with ChangeNotifier {
   final PostRepository postRepository;
