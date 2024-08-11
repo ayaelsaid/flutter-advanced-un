@@ -42,36 +42,3 @@ class CommentProvider with ChangeNotifier {
 }
 
 
-// class CommentProvider with ChangeNotifier {
-//   final CommentRepository commentRepository;
-//   List<Comment> _comments = [];
-//   bool _loading = false;
-//   String? _error;
-
-//   CommentProvider({required this.commentRepository});
-
-//   List<Comment> get comments => _comments;
-//   bool get loading => _loading;
-//   String? get error => _error;
-
-//   Future<void> fetchComments(int postId) async {
-//     _loading = true;
-//     _error = null;
-//     notifyListeners(); 
-
-//     try {
-//       final result = await commentRepository.getComments(postId);
-//       if (result.isSuscces) {
-//         _comments = result.data!;
-//       } else {
-//         _error = result.error;
-//       }
-//     } catch (e) {
-//       _error = 'Exception: $e';
-//     } finally {
-//       _loading = false;
-//       notifyListeners();
-//     }
-//   }
-// }
-

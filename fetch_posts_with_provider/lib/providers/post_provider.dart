@@ -41,35 +41,3 @@ class PostProvider with ChangeNotifier {
   }
 }
 
-// class PostProvider with ChangeNotifier {
-//   final PostRepository postRepository;
-//   List<Post> _posts = [];
-//   bool _loading = false;
-//   String? _error;
-
-//   PostProvider({required this.postRepository});
-
-//   List<Post> get posts => _posts;
-//   bool get loading => _loading;
-//   String? get error => _error;
-
-//   Future<void> fetchPosts() async {
-//     _loading = true;
-//     _error = null;
-//     notifyListeners();
-
-//     try {
-//       final result = await postRepository.getPosts();
-//       if (result.isSuscces) {
-//         _posts = result.data!;
-//       } else {
-//         _error = result.error;
-//       }
-//     } catch (e) {
-//       _error = 'Exception: $e';
-//     } finally {
-//       _loading = false;
-//       notifyListeners(); 
-//     }
-//   }
-// }
