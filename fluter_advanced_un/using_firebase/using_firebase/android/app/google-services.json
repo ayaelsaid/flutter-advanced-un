@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548421416820",
+    "project_id": "edu-vista-5abfd",
+    "storage_bucket": "edu-vista-5abfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548421416820:android:921944a4e07833d4855e21",
+        "android_client_info": {
+          "package_name": "com.example.using_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdQAUNa_LlwLoErMQJv9aIGqhOFFvrmf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
