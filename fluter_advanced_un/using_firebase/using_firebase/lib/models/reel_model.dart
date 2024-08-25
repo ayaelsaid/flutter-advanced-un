@@ -22,12 +22,12 @@ class ReelModel {
 
 class ReelCommentModel {
   final String comment;
-  final String? userProfilePic; // Optional parameter
+  final String? userProfilePic;
   final String userName;
   final DateTime commentTime;
 
   ReelCommentModel({
-    this.userProfilePic, // Optional parameter, no default value
+    this.userProfilePic,
     required this.comment,
     required this.userName,
     required this.commentTime,
