@@ -60,7 +60,7 @@ class _CoursesWidgetState extends State<CoursesWidget> {
             padding: const EdgeInsets.all(10),
             shrinkWrap: true,
             physics:
-                const NeverScrollableScrollPhysics(), // Prevent scrolling within GridView
+                const NeverScrollableScrollPhysics(),
             children: List.generate(courses.length, (index) {
               final course = courses[index];
               return InkWell(
@@ -69,7 +69,6 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                       arguments: course);
                 },
                 child: Container(
-                  color: Colors.amber,
                   padding: const EdgeInsets.all(10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -100,48 +99,48 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
                       ),
-                      const SizedBox(height: 5),
-                      Row(
-                        children: [
-                          Text(
-                            course.rating?.toStringAsFixed(1) ?? 'N/A',
-                            style: const TextStyle(fontSize: 16),
-                          ),
-                          const SizedBox(width: 5),
-                          ...List.generate(5, (starIndex) {
-                            return Icon(
-                              starIndex < (course.rating ?? 0).floor()
-                                  ? Icons.star
-                                  : Icons.star_border,
-                              color: const Color.fromRGBO(255, 193, 7, 1),
-                              size: 20,
-                            );
-                          }),
-                        ],
-                      ),
-                      const SizedBox(height: 5),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.person,
-                            size: 20,
-                            color: Colors.grey,
-                          ),
-                          const SizedBox(width: 5),
-                          Expanded(
-                            child: Text(
-                              course.instructor?.name ?? 'Unknown',
-                              style: const TextStyle(fontSize: 14),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 5),
-                      Text(
-                        '\$${course.price?.toStringAsFixed(2) ?? 'N/A'}',
-                        style: const TextStyle(fontSize: 14),
-                      ),
+                  //     const SizedBox(height: 5),
+                  //     Row(
+                  //       children: [
+                  //         Text(
+                  //           course.rating?.toStringAsFixed(1) ?? 'N/A',
+                  //           style: const TextStyle(fontSize: 16),
+                  //         ),
+                  //         const SizedBox(width: 5),
+                  //         ...List.generate(5, (starIndex) {
+                  //           return Icon(
+                  //             starIndex < (course.rating ?? 0).floor()
+                  //                 ? Icons.star
+                  //                 : Icons.star_border,
+                  //             color: const Color.fromRGBO(255, 193, 7, 1),
+                  //             size: 20,
+                  //           );
+                  //         }),
+                  //       ],
+                  //     ),
+                  //     const SizedBox(height: 5),
+                  //     Row(
+                  //       children: [
+                  //         const Icon(
+                  //           Icons.person,
+                  //           size: 20,
+                  //           color: Colors.grey,
+                  //         ),
+                  //         const SizedBox(width: 5),
+                  //         Expanded(
+                  //           child: Text(
+                  //             course.instructor?.name ?? 'Unknown',
+                  //             style: const TextStyle(fontSize: 14),
+                  //             overflow: TextOverflow.ellipsis,
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //     const SizedBox(height: 5),
+                  //     Text(
+                  //       '\$${course.price?.toStringAsFixed(2) ?? 'N/A'}',
+                  //       style: const TextStyle(fontSize: 14),
+                  //     ),
                     ],
                   ),
                 ),
