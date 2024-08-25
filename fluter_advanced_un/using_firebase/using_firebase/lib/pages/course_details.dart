@@ -23,20 +23,16 @@ class CourseDetailsPage extends StatefulWidget {
 
 class _CourseDetailsPageState extends State<CourseDetailsPage> {
   @override
-void didChangeDependencies() {
+  void didChangeDependencies() {
     super.didChangeDependencies();
     context.read<CourseBloc>().add(CourseFetchEvent(widget.course));
     context.read<LectureBloc>().add(FetchLecturesEvent(widget.course.id ?? ''));
   }
 
-var reelsList = <ReelModel>[
-  ReelModel(
-    'using_firebase/assets/videos/proj.mp4',
-    'Darshan Patil',
-    likeCount: 2000,
-    isLiked: true,
-    reelDescription: "First coding."
-)];
+  var reelsList = <ReelModel>[
+    ReelModel('assets/videos/proj.mp4', 'Darshan Patil',
+        likeCount: 2000, isLiked: true, reelDescription: "First coding.")
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -45,27 +41,35 @@ var reelsList = <ReelModel>[
         children: [
           BlocBuilder<LectureBloc, LectureState>(
             builder: (context, lectureState) {
-              if (lectureState is LectureChosenState && lectureState.lecture.lecture_url != null) {
+              if (lectureState is LectureChosenState &&
+                  lectureState.lecture.lecture_url != null) {
                 return ReelsViewer(
                   reelsList: reelsList,
                   appbarTitle: 'Instagram Reels',
                   onShare: (url) {
-                    developer.log('Shared reel url ==> $url', name: 'ReelsViewer');
+                    developer.log('Shared reel url ==> $url',
+                        name: 'ReelsViewer');
                   },
                   onLike: (url) {
-                    developer.log('Liked reel url ==> $url', name: 'ReelsViewer');
+                    developer.log('Liked reel url ==> $url',
+                        name: 'ReelsViewer');
                   },
                   onComment: (comment) {
-                    developer.log('Comment on reel ==> $comment', name: 'ReelsViewer');
+                    developer.log('Comment on reel ==> $comment',
+                        name: 'ReelsViewer');
                   },
                   onClickMoreBtn: () {
-                    developer.log('======> Clicked on more option <======', name: 'ReelsViewer');
+                    developer.log('======> Clicked on more option <======',
+                        name: 'ReelsViewer');
                   },
                   onClickBackArrow: () {
-                    developer.log('======> Clicked on back arrow <======', name: 'ReelsViewer');
+                    developer.log('======> Clicked on back arrow <======',
+                        name: 'ReelsViewer');
                   },
                   onIndexChanged: (index) {
-                    developer.log('======> Current Index ======> $index <========', name: 'ReelsViewer');
+                    developer.log(
+                        '======> Current Index ======> $index <========',
+                        name: 'ReelsViewer');
                   },
                   showProgressIndicator: true,
                   showVerifiedTick: true,
@@ -78,7 +82,8 @@ var reelsList = <ReelModel>[
           Align(
             alignment: Alignment.bottomCenter,
             child: BlocBuilder<CourseBloc, CourseState>(
-              buildWhen: (previous, current) => current is CourseOptionStateChanges,
+              buildWhen: (previous, current) =>
+                  current is CourseOptionStateChanges,
               builder: (context, state) {
                 if (state is CourseOptionStateChanges) {
                   final courseOption = state.courseOption;
@@ -103,12 +108,15 @@ var reelsList = <ReelModel>[
                             const SizedBox(height: 30),
                             Text(
                               widget.course.title ?? 'No Name',
-                              style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.w700, fontSize: 20),
                             ),
                             const SizedBox(height: 5),
                             Text(
-                              widget.course.instructor?.name ?? 'No Instructor Name',
-                              style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+                              widget.course.instructor?.name ??
+                                  'No Instructor Name',
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.w400, fontSize: 17),
                             ),
                             const SizedBox(height: 10),
                             Expanded(
@@ -120,33 +128,56 @@ var reelsList = <ReelModel>[
                                         LectureChipsWidget(
                                           selectedOption: courseOption,
                                           onChanged: (courseOption) {
-                                            context.read<CourseBloc>().add(CourseOptionChosenEvent(courseOption));
+                                            context.read<CourseBloc>().add(
+                                                CourseOptionChosenEvent(
+                                                    courseOption));
                                           },
                                         ),
                                         const SizedBox(height: 10),
                                         Expanded(
-                                          child: courseOption == CourseOptions.Lecture
+                                          child: courseOption ==
+                                                  CourseOptions.Lecture
                                               ? lectureState.lectures.isEmpty
-                                                  ? const Center(child: Text('No lectures available'))
+                                                  ? const Center(
+                                                      child: Text(
+                                                          'No lectures available'))
                                                   : GridView.count(
                                                       mainAxisSpacing: 15,
                                                       crossAxisSpacing: 15,
                                                       shrinkWrap: true,
                                                       crossAxisCount: 2,
-                                                      children: List.generate(lectureState.lectures.length, (index) {
-                                                        final lecture = lectureState.lectures[index];
+                                                      children: List.generate(
+                                                          lectureState.lectures
+                                                              .length, (index) {
+                                                        final lecture =
+                                                            lectureState
+                                                                    .lectures[
+                                                                index];
                                                         return InkWell(
                                                           onTap: () {
-                                                            context.read<LectureBloc>().add(LectureChosenEvent(lecture));
+                                                            context
+                                                                .read<
+                                                                    LectureBloc>()
+                                                                .add(LectureChosenEvent(
+                                                                    lecture));
                                                           },
                                                           child: Container(
-                                                            padding: const EdgeInsets.all(10),
-                                                            decoration: BoxDecoration(
-                                                              color: const Color(0xffE0E0E0),
-                                                              borderRadius: BorderRadius.circular(40),
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .all(10),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: const Color(
+                                                                  0xffE0E0E0),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          40),
                                                             ),
                                                             child: Center(
-                                                              child: Text(lecture.title ?? 'No Name'),
+                                                              child: Text(lecture
+                                                                      .title ??
+                                                                  'No Name'),
                                                             ),
                                                           ),
                                                         );
