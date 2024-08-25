@@ -22,6 +22,8 @@ void main() async {
   await PreferencesService.init();
 
   try {
+  // note i use allow read, write: if true in firebase;
+
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
