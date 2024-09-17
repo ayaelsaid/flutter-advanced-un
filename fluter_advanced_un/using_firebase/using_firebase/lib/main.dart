@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 // import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:using_firebase/bloc/courses/courses_bloc.dart';
 import 'package:using_firebase/bloc/lectures/lecture_bloc.dart';
@@ -35,7 +36,7 @@ void main() async {
   } catch (e) {
     print('Failed to initialize Firebase: $e');
   }
-  // await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: ".env");
   runApp(
     MultiBlocProvider(
       providers: [
