@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:using_firebase/utilis/color_utilis.dart';
 
-// ignore: must_be_immutable
 class CustomTextButton extends StatelessWidget {
   String label;
   void Function()? onPressed;
