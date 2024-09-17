@@ -13,4 +13,6 @@ class Category {
     data['name'] = name;
     return data;
   }
+
+  static from(List<Category> list) {}
 }

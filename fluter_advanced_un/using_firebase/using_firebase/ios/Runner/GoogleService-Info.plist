@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>300830567303-pcqea6pbhvqb03i1v4ol7dsqnjcgad6a.apps.googleusercontent.com</string>
+	<string>548421416820-m0c08l22vqreicctbvq37v41a3p1ubrc.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.300830567303-pcqea6pbhvqb03i1v4ol7dsqnjcgad6a</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>300830567303-39j253bm66h5m7di7smurthlc07s2btm.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.548421416820-m0c08l22vqreicctbvq37v41a3p1ubrc</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAKBoF7WH8D_y9Gg4lKQt55W7uIXyYyJis</string>
+	<string>AIzaSyBDSC08ROOn2O3D6lw1hIu4dZzcmNAGYxU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>300830567303</string>
+	<string>548421416820</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.google.flood2</string>
+	<string>com.example.usingFirebase</string>
 	<key>PROJECT_ID</key>
-	<string>fir-demo-project</string>
+	<string>edu-vista-5abfd</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fir-demo-project.appspot.com</string>
+	<string>edu-vista-5abfd.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,10 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:300830567303:ios:09b1ab1d3ca29bda</string>
-	<key>DATABASE_URL</key>
-	<string>https://fir-demo-project.firebaseio.com</string>
-	<key>ADMOB_APP_ID</key>
-	<string>ca-app-pub-8123415297019784~1001342552</string>
+	<string>1:548421416820:ios:235b3b4d235119a5855e21</string>
 </dict>
 </plist>

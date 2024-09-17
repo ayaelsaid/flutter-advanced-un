@@ -38,16 +38,16 @@ class _HomePageState extends State<HomePage> {
                 name: 'Students Also Search For',
                 onSeeAllClicked: () {},
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               const CoursesWidget(
                 rankValue: 'top search',
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               LabelWidget(
                 name: 'Top Rated Courses',
                 onSeeAllClicked: () {},
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               const CoursesWidget(
                 rankValue: 'top rated',
               ),

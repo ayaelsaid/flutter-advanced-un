@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:using_firebase/models/course.dart';
@@ -74,23 +76,35 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                     children: [
                       SizedBox(
                         height: 100,
-                        child: course.image != null
-                            ? Image.network(
-                                course.image!,
-                                fit: BoxFit.cover,
-                                errorBuilder: (context, error, stackTrace) {
-                                  return Container(
-                                    color: Colors.grey,
-                                    child: const Icon(Icons.error),
-                                  );
-                                },
-                              )
-                            : Container(
-                                color: Colors.grey,
-                                child: const Icon(Icons.image_not_supported),
-                              ),
+                                
+child: course.image != null && course.image!.isNotEmpty
+    ? Image.network(
+        course.image!,
+        fit: BoxFit.cover,
+errorBuilder: (context, error, stackTrace) {
+  print('Error loading image: $error');
+  if (error is FormatException) {
+    print('FormatException: ${error.message}');
+  } else if (error is HttpException) {
+    print('HttpException: ${error.message}');
+  } else {
+    print('Other Exception: ${error.toString()}');
+  }
+  print('StackTrace: $stackTrace');
+  
+  return Container(
+    color: Colors.grey,
+    child: const Icon(Icons.error, color: Colors.red, size: 50),
+  );
+},
+    )
+      
+    : Container(
+        color: Colors.grey,
+        child: const Icon(Icons.image_not_supported, color: Colors.white, size: 50),
+      ),
                       ),
-                      const SizedBox(height: 5),
+       const SizedBox(height: 5),
                       Text(
                         course.title ?? 'unknown',
                         style: const TextStyle(
@@ -140,6 +154,7 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                       //       '\$${course.price?.toStringAsFixed(2) ?? 'N/A'}',
                       //       style: const TextStyle(fontSize: 14),
                       //     ),
+                      
                     ],
                   ),
                 ),
@@ -149,5 +164,3 @@ class _CoursesWidgetState extends State<CoursesWidget> {
         });
   }
 }
-
-
